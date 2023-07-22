@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ Page</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=Merriweather:wght@700&family=Poppins&family=Raleway:wght@500&display=swap');
+             
+            body {
+                font-family: 'Raleway', sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                background-image: url("bg.jpg");
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 1rem 0;
+                text-align: center;
+            }
+            button{
+                background-color: #333;
+                color: #fff;
+                padding: 1rem 0;
+                border: none;
+                cursor: pointer;
+                font-size: 15px;
+                font-family: 'Raleway', serif;
+                margin-left: 20px;
+                margin-top: 20px;
+                border-radius: 10px;
+                width: 75px;
+                height: 50px;
+                transition: 0.5s;
+                float: left;
+            }
+            .faq-container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            .faq {
+                margin-bottom: 20px;
+            }
+            
+            .question {
+                cursor: pointer;
+                background-color: #f2f2f2;
+                padding: 10px;
+                font-size: 18px;
+                font-family: 'Merriweather', serif;
+            }
+            
+            .answer {
+                border: 3px solid #57b3d4;
+                border-radius: 10px;
+                background: #9bd4e8;
+                padding: 0px 15px;
+                margin: 0 0 7px 0;
+                height: 0;
+                overflow: hidden;
+                z-index: -1;
+                position: relative;
+                opacity: 0;
+                -webkit-transition: .7s ease;
+                -moz-transition: .7s ease;
+                -o-transition: .7s ease;
+                transition: .7s ease;
+            }
+            .question.active {
+                background-color: #ddd;
+                transform: scale(1.05); 
+            }
+            
+            .question.active + .answer {
+                height: auto;
+                opacity: 1;
+                padding: 15px;
+            }
+            img{
+                width: 20px;
+                height: 20px;
+                float: right;
+            }
+            p{
+                font-size: 16px;
+                font-family: 'Poppins', sans-serif;
+            }
+            h1{
+                font-family: 'Merriweather', serif;
+                font-size: 30px;
+                font-weight: bolder;
+            }
+            button:hover{
+                background-color: #fff;
+                color:#333;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <button><- Back</button>
+            <div class="site-right"><h1 text-align="center">FREQUENTLY ASKED QUESTIONS</h1></div>
+        </header>
+        
+        
+        <div class="faq-container">
+            <div class="faq">
+                <h2 class="question">How do I book a bus ticket on your site?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>Booking a bus ticket is easy and straightforward. Simply visit our website, select the
+                         'Book Tickets' option, enter your departure and arrival locations, travel dates, and the
+                          number of passengers. Click on the 'Search Buses' button, and you'll be presented with a 
+                          list of available buses for your route. Choose the one that suits your preferences and proceed
+                          to the payment page to confirm your booking.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2 class="question">What payment methods do you accept?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>We accept various payment methods to provide you with a convenient booking experience. You can pay
+                         for your bus ticket using credit cards, debit cards, and popular online payment platforms like 
+                         PayPal.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2 class="question">Is it necessary to create an account to book a ticket?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>Yes, it is necessary to create an account to book a ticket, in order to track all your tickets.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2 class="question">Can I cancel or modify my reservation?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>Yes, you can cancel or modify your reservation, subject to the terms and conditions of your ticket 
+                        type and the bus operator's policy. Simply log in to your account, go to the 'My Bookings' section, 
+                        and choose the booking you wish to cancel or modify. Please note that cancellation or modification 
+                        fees may apply depending on the time left before departure.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2 class="question">Will I receive a confirmation of my booking?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>Yes, once you successfully complete the booking process, you will receive an email confirmation 
+                        containing all the details of your reservation. We recommend keeping this email for your reference 
+                        when boarding the bus.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2 class="question">Can I book a bus ticket for someone else?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>Yes, you can book a bus ticket for someone else. During the booking process, you have the option 
+                        to enter the passenger's details, including their name and contact information. However, it's 
+                        essential to ensure that the passenger has a copy of the booking confirmation for a smooth boarding
+                         process.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2 class="question">How can I contact the support team?<img src="downarrow.png"></h2>
+                <div class="answer">
+                    <p>You can contact our support team by emailing support@royalrides.com or  by calling ++91 1234567890.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const questions = document.querySelectorAll(".question");
+            
+                questions.forEach((question) => {
+                    question.addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        const answer = this.nextElementSibling;
+                        if (this.classList.contains("active")) {
+                            answer.style.display = "block";
+                        } else {
+                            answer.style.display = "none";
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
