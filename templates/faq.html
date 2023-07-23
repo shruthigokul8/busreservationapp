@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FAQ Page</title>
+        <link rel="icon" href="./static/logo.png" type="image/icon type">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=Merriweather:wght@700&family=Poppins&family=Raleway:wght@500&display=swap');
              
@@ -12,23 +13,21 @@
                 line-height: 1.6;
                 margin: 0;
                 padding: 0;
-                background-image: url("bg.jpg");
+                background-image: url("./static/bg.jpg");
             }
             header {
                 background-color: #333;
                 color: #fff;
                 padding: 1rem 0;
-                text-align: center;
             }
             button{
                 background-color: #333;
                 color: #fff;
                 padding: 1rem 0;
                 border: none;
-                cursor: pointer;
                 font-size: 15px;
                 font-family: 'Raleway', serif;
-                margin-left: 20px;
+                margin-left: 10px;
                 margin-top: 20px;
                 border-radius: 10px;
                 width: 75px;
@@ -90,9 +89,10 @@
                 font-family: 'Poppins', sans-serif;
             }
             h1{
-                font-family: 'Merriweather', serif;
+                font-family: 'Poppins', serif;
                 font-size: 30px;
                 font-weight: bolder;
+                text-align: center;
             }
             button:hover{
                 background-color: #fff;
@@ -102,14 +102,13 @@
     </head>
     <body>
         <header>
-            <button><- Back</button>
-            <div class="site-right"><h1 text-align="center">FREQUENTLY ASKED QUESTIONS</h1></div>
+            <button><a href="{{ url_for('home') }}">Back</a></button>
+            <h1>FREQUENTLY ASKED QUESTIONS</h1>
         </header>
-        
-        
+        <br>
         <div class="faq-container">
             <div class="faq">
-                <h2 class="question">How do I book a bus ticket on your site?<img src="downarrow.png"></h2>
+                <h2 class="question">How do I book a bus ticket on your site?<img src="./static/downarrow.png"></h2>
                 <div class="answer">
                     <p>Booking a bus ticket is easy and straightforward. Simply visit our website, select the
                          'Book Tickets' option, enter your departure and arrival locations, travel dates, and the
@@ -119,7 +118,7 @@
                 </div>
             </div>
             <div class="faq">
-                <h2 class="question">What payment methods do you accept?<img src="downarrow.png"></h2>
+                <h2 class="question">What payment methods do you accept?<img src="./static/downarrow.png"></h2>
                 <div class="answer">
                     <p>We accept various payment methods to provide you with a convenient booking experience. You can pay
                          for your bus ticket using credit cards, debit cards, and popular online payment platforms like 
@@ -127,13 +126,13 @@
                 </div>
             </div>
             <div class="faq">
-                <h2 class="question">Is it necessary to create an account to book a ticket?<img src="downarrow.png"></h2>
+                <h2 class="question">Is it necessary to create an account to book a ticket?<img src="./static/downarrow.png"></h2>
                 <div class="answer">
                     <p>Yes, it is necessary to create an account to book a ticket, in order to track all your tickets.</p>
                 </div>
             </div>
             <div class="faq">
-                <h2 class="question">Can I cancel or modify my reservation?<img src="downarrow.png"></h2>
+                <h2 class="question">Can I cancel or modify my reservation?<img src="./static/downarrow.png"></h2>
                 <div class="answer">
                     <p>Yes, you can cancel or modify your reservation, subject to the terms and conditions of your ticket 
                         type and the bus operator's policy. Simply log in to your account, go to the 'My Bookings' section, 
@@ -142,7 +141,7 @@
                 </div>
             </div>
             <div class="faq">
-                <h2 class="question">Will I receive a confirmation of my booking?<img src="downarrow.png"></h2>
+                <h2 class="question">Will I receive a confirmation of my booking?<img src="./static/downarrow.png"></h2>
                 <div class="answer">
                     <p>Yes, once you successfully complete the booking process, you will receive an email confirmation 
                         containing all the details of your reservation. We recommend keeping this email for your reference 

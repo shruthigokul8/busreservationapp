@@ -5,6 +5,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_migrate import Migrate
 from sqlalchemy.sql import text
+import torch
 
 db = SQLAlchemy()
 # create the app
@@ -19,22 +20,44 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # initialize the app with Flask-SQLAlchemy
 db.init_app(app)
 
-
-# NOTHING BELOW THIS LINE NEEDS TO CHANGE
-# this route will test the database connection - and nothing more
+#functionality
 @app.route('/')
 def home():
-    return render_template('main.html')
+    return render_template("dashboard.html")
 
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template("about.html")
 
-@app.route('/customer/')
-def customer():
-    return render_template('customer.html')
+@app.route('/contact', methods=['GET'])
+def contact():
+    return render_template("contact.html")
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    return render_template("signup.html")
 
-@app.route('/admin/')
-def administrator():
-    return render_template('admin.html')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template("login.html")
+
+@app.route('/customerdetails', methods=['GET'])
+def customerdetails():
+    return render_template("customerdetails.html")
+
+@app.route('/faq', methods=['GET'])
+def faq():
+    return render_template("faq.html")
+
+@app.route('/landing', methods=['GET'])
+def landing():
+    return render_template("landing.html")
+
+@app.route('/seating', methods=['GET', 'POST'])
+def seating():
+    return render_template("seating.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.debug = True
+    app.run()
+    
